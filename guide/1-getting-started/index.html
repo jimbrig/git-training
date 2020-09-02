@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="Jimmy Briggs">
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Getting Started - Git Training</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/darcula.min.css">
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">Git Training</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../about/" class="nav-link">About</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../notes/" class="nav-link">Notes</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../resources/" class="nav-link">Resources</a>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Guide <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../0-introduction/" class="dropdown-item">Introduction</a>
+</li>
+                                    
+<li>
+    <a href="./" class="dropdown-item active">Getting Started</a>
+</li>
+                                    
+<li>
+    <a href="../2-installation.md" class="dropdown-item">Installation</a>
+</li>
+                                    
+<li>
+    <a href="../3-configuration.md" class="dropdown-item">Configuration</a>
+</li>
+                                    
+<li>
+    <a href="../4-workflows.md" class="dropdown-item">Workflows</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../0-introduction/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" class="nav-link disabled">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/jimbrig/git-training/edit/master/docs/guide/1-getting-started.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#getting-started" class="nav-link">Getting Started</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#core-concepts-and-workflows" class="nav-link">Core Concepts and Workflows</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#distributed-version-control-system" class="nav-link">Distributed Version Control System</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#cloning" class="nav-link">Cloning</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#making-changes" class="nav-link">Making Changes</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#updating-the-remote-repository" class="nav-link">Updating the Remote Repository</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#updating-the-development-environment" class="nav-link">Updating the Development Environment</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#additional-concepts" class="nav-link">Additional Concepts</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#further-reading" class="nav-link">Further Reading</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="getting-started">Getting Started</h1>
+<p>When first getting started with Git it is useful to first understand the core 
+concepts and workflows related to Git and Version Control Systems. </p>
+<p>Here I will first look at those core concepts and workflows and then follow up 
+with a more in-depth dive into the individual components that build the Version Control System.</p>
+<h2 id="core-concepts-and-workflows">Core Concepts and Workflows</h2>
+<p>At its core Git is merely a content magement system build off of comprehensive 
+indexing the history, changes, and metadata surrounding the evolutionof those 
+changes over time for a specific project, dataset, or directory of content. </p>
+<h2 id="distributed-version-control-system">Distributed Version Control System</h2>
+<p>It is important to realize that a <strong>distributed version control system</strong> is the backbone of the fundamental Git workflow. To understand further imagine separating your project into two main environments:  </p>
+<ul>
+<li>The <em>Dev Environment</em> - This is where you work on your project locally     and develop new code, data, functions, etc.</li>
+<li>The <em>Remote or Server Environment</em> - This is a remote repository that    mirrors and tracks your development environment using Git. </li>
+</ul>
+<hr />
+<p><img alt="" src="../../img/distributed-vc-system.png" /></p>
+<hr />
+<h4 id="the-development-environment">The Development Environment:</h4>
+<ul>
+<li>Working Directory </li>
+<li>Staging Area and Index </li>
+<li>Local Repository </li>
+</ul>
+<h4 id="server-remote-environment">Server / Remote Environment:</h4>
+<ul>
+<li>Remote Repository </li>
+</ul>
+<h2 id="cloning">Cloning</h2>
+<p>When cloning a remote repository, the data from the remote repository travels to two areas: </p>
+<ul>
+<li>Working Directory </li>
+<li>Local Repository </li>
+</ul>
+<p><img alt="" src="../../img/clone.png" /></p>
+<h2 id="making-changes">Making Changes</h2>
+<p>There are two types of files in the working directory: </p>
+<ul>
+<li>Tracked: files that Git knows about.</li>
+<li>Untracked: files that have still not been added, so Git doesn’t know     about. </li>
+</ul>
+<p><img alt="" src="../../img/tracked-untracked.png" /></p>
+<h2 id="updating-the-remote-repository">Updating the Remote Repository</h2>
+<p>As changes are ready in the working directory, they must be added in the staging 
+area.</p>
+<p>When there is a set of changes with a single purpose in the staging area, 
+it’s the time to create a <em>commit</em> with a message about that purpose in the 
+local repository.</p>
+<p>When there are one or several commits in the local repository ready to be shared
+with the rest of the world, they must be <em>pushed</em> to the remote repository.</p>
+<p>The core workflow for incorporating changes from local to remote is 
+<strong>Add -&gt; Commit -&gt; Push</strong>: </p>
+<p><img alt="" src="../../img/add-commit-push.png" /></p>
+<p>You can break down the different possible states of a file in the development environment into three main categories: </p>
+<ul>
+<li>Modified </li>
+<li>Staged </li>
+<li>Committed</li>
+</ul>
+<p><img alt="" src="../img/states" /></p>
+<p>Additionally, it is useful to be familiar with these helpful utility commands: </p>
+<ul>
+<li>
+<p><code>git diff</code> - show the changes of a file in the working directory compared to what is currently on remote. </p>
+</li>
+<li>
+<p><code>git diff --staged</code> - show the changes of a file in the staging area</p>
+</li>
+</ul>
+<h2 id="updating-the-development-environment">Updating the Development Environment</h2>
+<p>When changes are made on the remote repository over time, either by yourself or collaborators, you will want to keep your local development environment up-to-date by <strong>fetching</strong>, <strong>pulling</strong>, and/or <strong>rebasing</strong> the remote repository with your local repository.</p>
+<p>A helpful way to think about this is imagining it working like cloud storage software such as Google Drive. When a file is updated on the cloud (i.e. the remote repository) the software sync's your local version of that file to stay up-to-date with the remote file. </p>
+<p>Similarly, Git keeps your local environment in sync by continuously watching and tracking changes to the remote repository, but will not automatically make the changes to your local repository for you. </p>
+<h3 id="fetching">Fetching</h3>
+<p>Fetching via <code>git fetch</code> pulls data from the <em>remote repository</em> to the 
+<em>local repository</em>. </p>
+<p><img alt="" src="../../img/fetch.png" /></p>
+<h3 id="pulling">Pulling</h3>
+<p>When executing <code>git pull</code>, the data from remote repository travel to two areas:</p>
+<ul>
+<li>To local repository: <code>fetch</code> </li>
+<li>To working directory: <code>merge</code> </li>
+</ul>
+<p><img alt="" src="../../img/pull.png" /></p>
+<h3 id="rebasing">Rebasing</h3>
+<p>If you take care of the commit history, consider the use of <code>git pull --rebase</code>. </p>
+<p>Instead of fetch + merge, it consists of fetch + rebase. </p>
+<p>Your local commits will be replayed and you won’t see the known diamond shape in commit history.</p>
+<p><img alt="" src="../../img/pull-rebase.png" /></p>
+<h2 id="additional-concepts">Additional Concepts</h2>
+<ul>
+<li>
+<p>Stashing</p>
+</li>
+<li>
+<p>Branching</p>
+</li>
+<li>
+<p>Commit history</p>
+</li>
+</ul>
+<h2 id="further-reading">Further Reading</h2>
+<ul>
+<li><a href="https://git-scm.com/book/en">Pro Git Book</a></li>
+</ul>
+<p>Now lets take an in-depth look at git from the ground up by continuing to <a href="../2-deep-dive/">Git Deep Dive</a></p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

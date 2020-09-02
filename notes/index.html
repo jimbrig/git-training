@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="Jimmy Briggs">
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Notes - Git Training</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/darcula.min.css">
+
+        <script src="../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">Git Training</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href=".." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../about/" class="nav-link">About</a>
+                            </li>
+                            <li class="navitem active">
+                                <a href="./" class="nav-link">Notes</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../resources/" class="nav-link">Resources</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Guide <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../guide/0-introduction/" class="dropdown-item">Introduction</a>
+</li>
+                                    
+<li>
+    <a href="../guide/1-getting-started/" class="dropdown-item">Getting Started</a>
+</li>
+                                    
+<li>
+    <a href="../guide/2-installation.md" class="dropdown-item">Installation</a>
+</li>
+                                    
+<li>
+    <a href="../guide/3-configuration.md" class="dropdown-item">Configuration</a>
+</li>
+                                    
+<li>
+    <a href="../guide/4-workflows.md" class="dropdown-item">Workflows</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../about/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../resources/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/jimbrig/git-training/edit/master/docs/notes.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="2"><a href="#notes" class="nav-link">Notes:</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#tips" class="nav-link">Tips</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#dont-forget" class="nav-link">Don’t forget</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h2 id="notes">Notes:</h2>
+<h3 id="local-workflow">Local Workflow:</h3>
+<ul>
+<li>git init: put Git in this folder so that it keeps track of changes to files in this folder and subfolders </li>
+<li>Working Directory: the directory you’re writing code in </li>
+<li>Staging Area: files are in the staging area if the changes in them will be included in the next save point </li>
+<li>Repository: everything Git is keeping track of </li>
+<li>git status: show me which files have been changed and which ones are ready to be committed </li>
+<li>git add filename.txt: include the changes to this file in the next commit </li>
+<li>git commit -m “commit message”: wrap up all these changes and save them together with a short description of the changes</li>
+<li>git log: show a history of all commits</li>
+<li>git diff: show what is different from the last commit line by line</li>
+<li>git diff 234nod: show what is different between the commit 234nod and current state, line by line</li>
+</ul>
+<h3 id="remote-repository">Remote Repository</h3>
+<ul>
+<li>git remote add origin address-of-remote: make address-of-remote a new place to put my code and call it “origin”</li>
+<li>git push -u origin master: push my code to the location origin points to, on the master branch, and also in the future I will pull code from this same location</li>
+<li>Upstream: where I will pull code from in the future</li>
+<li>Origin: where I put backups or share my code</li>
+<li>git pull: grab code from another repository</li>
+<li>git fetch: grab code from another repository</li>
+<li>git push: save my history and changes in another location</li>
+<li>Fork: I want a GitHub repo that looks like someone else’s repo</li>
+<li>Pull Request: I made some changes that I would like you to include in your repository, please accept them</li>
+<li>git clone: give me the code at this location</li>
+</ul>
+<h3 id="branching">Branching</h3>
+<ul>
+<li>git branch: what are all my branches? or what are all the names of the different versions of my code?</li>
+<li>git branch feature: make a new branch/version of my code with the name feature</li>
+<li>git checkout feature: move to that branch/version of my code so I can make changes to that branch/version of my code</li>
+<li>master: the name of the branch which should be the official, working, well documented, version of my code</li>
+<li>git merge: combine the history of two branches so I can have the changes from both in one place</li>
+<li>Merge Conflict: Git does not know how to combine two histories and needs human assistance</li>
+</ul>
+<h3 id="more-advanced-concepts">More Advanced Concepts</h3>
+<blockquote>
+<p>Would not teach these early on in the process.</p>
+</blockquote>
+<ul>
+<li>HEAD</li>
+<li>git rebase</li>
+<li>git rm filename.txt</li>
+<li>git mv filename.txt otherfile.txt</li>
+<li>git rebase</li>
+<li>git cherry-pick</li>
+<li>git bisect</li>
+<li>git amend</li>
+<li>git reflog</li>
+<li>git blame</li>
+</ul>
+<h2 id="tips">Tips</h2>
+<ul>
+<li>Have trainees install Git and make a GitHub/Bitbucket account ahead of time to save time. </li>
+<li>Anticipate Windows users and be prepared for the strange ways in which Git bash works differently. </li>
+<li>Partner students up so there are fewer different machines to worry about. Make sure the partners have the same operating system so that they do not learn Git in an environment   they will never use again. </li>
+<li>If you are teaching an individual, give them a project to work on so they can use Git in context. It is harder to pick a project that would work for a group of people, and it     will be hard to monitor all of them, of course. But if you can use a project, especially for teaching a single person, the process is a lot easier. </li>
+</ul>
+<h2 id="dont-forget">Don’t forget</h2>
+<ul>
+<li>Build a context for your student before teaching commands by explaining the problem Git solves, drawing pictures, and using metaphors. </li>
+<li>When you teach the commands, try and explain them without using the name of the command in the explanation. </li>
+<li>Be choosey about what to teach right now and what they can learn later.</li>
+</ul></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js" defer></script>
+        <script src="../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
