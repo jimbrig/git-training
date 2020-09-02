@@ -1,0 +1,23 @@
+site_name: Git Training
+site_url: https://jimbrig.github.io/git-training/
+repo_url: https://github.com/jimbrig/git-training
+site_description: Introduction to Git and Version Control.
+site_author: Jimmy Briggs
+
+nav: 
+    - Home: index.md
+    - Guide: 
+        - 'Introduction': 'guide/0-introduction.md' 
+        - 'Getting Started': 'guide/1-getting-started.md'
+        - 'Deep Dive': 'guide/2-deep-dive.md'
+        - 'Installation': 'guide/3-installation.md'
+        - 'Configuration': 'guide/4-configuration.md'
+    - Notes: notes.md
+    - Resources: resources.md
+    - About: about.md
+        
+theme:
+  name: slate
+      
+
+    

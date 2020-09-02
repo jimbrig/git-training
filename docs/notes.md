@@ -1,95 +1,11 @@
-# Git Training Materials
+---
+title: Notes
+summary: Various notes for teaching others git.
+author: Jimmy Briggs
+date: September 2, 2020
+---
 
-Various resources and workflows related to teaching others about Git and Version Control.
-
-Built with [MkDocs](https://www.mkdocs.org/).
-
-To install MkDocs and implement use this tutorial:
-
-## Installing MkDocs:
-
-Install via Chocolatey (Windows only):
-
-```
-choco --version
-```
-
-if need to install chocolatey use PowerShell as admin and run:
-
-```
-Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
-
-refreshenv
-```
-
-then install mkdocs with:
-
-```
-choco upgrade mkdocs -y
-
-refreshenv
-```
-
-or install via python and pip
-
-```
-python --version
-
-pip --version
-```
-
-if need to install python and pip:
-
-```
-pip install --upgrade pip
-# or
-python get pip.py
-```
-
-then install MkDocs with:
-
-```
-pip install mkdocs
-```
-
-Check Version:
-
-```
-mkdocs --version
-```
-
-Install man pages:
-
-```
-pip install click-man
-click-man --target "%USERPROFILE%/Documents/Notes/MkDocs mkdocs"
-```
-
-### Initialize MkDocs Project Directory
-
-```
-mkdocs new "new-project"
-cd "new-project"
-```
-
-## Build and Serve
-```
-mkdocs build
-mkdocs build --clean
-mkdocs serve
-```
-
-Then, go to http:///127.0.0.1:8000/ for real time editing of website.
-
-For help, `mkdocs --help` or for a specific command `mkdocs <command> --help` (i.e. `mkdocs build --help`).
-
-## Deploy to GitHub Pages
-
-```
-mkdocs gh-deploy
-```
-
-## Git Notes: 
+## Notes: 
 
 ### Local Workflow:
 
