@@ -108,12 +108,159 @@
     
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#installing-git" class="nav-link">Installing Git</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#windows-installation-tips" class="nav-link">Windows Installation Tips</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#git-dependencies" class="nav-link">Git Dependencies</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#installing-a-gui" class="nav-link">Installing a GUI</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
         </ul>
     </div>
 </div></div>
                     <div class="col-md-9" role="main">
 
-<p>Coming Soon.</p></div>
+<h1 id="installing-git">Installing Git</h1>
+<blockquote>
+<p>Note: This guide is meant for Windows 10 users.</p>
+</blockquote>
+<p>There are many ways one can go about installing Git on a Windows machine. </p>
+<p>Examples include:</p>
+<ul>
+<li>downloading the <a href="https://github.com/git-for-windows/git/releases/download/v2.28.0.windows.1/Git-2.28.0-64-bit.exe">windows installer</a> for your machine from <a href="https://git-scm.com/">The Git Website</a> and running the installer locally,</li>
+<li>building from <a href="https://github.com/git-for-windows/git/releases/tag/v2.28.0.windows.1">source</a>,</li>
+<li>installing from command line or powershell,</li>
+<li><a href="https://github.com/git-for-windows/git/blob/main/INSTALL">installing via make</a>,</li>
+<li>or installing via a command line utility library such as scoop or chocolatey.</li>
+</ul>
+<p>How you install Git should be tailored to what you are comfortable with, which for most people is simply downloading the installer from Git's website and running it locally from your machine:</p>
+<ul>
+<li>Visit https://git-scm.com/downloads</li>
+<li>Click on Windows </li>
+<li>Select the installer based on your system's configuration:</li>
+<li>Operating System</li>
+<li>Portable or "thumbdrive edition"</li>
+<li>Full installation</li>
+<li>64-bit Architecture</li>
+<li>32-bit Architecture</li>
+</ul>
+<p>Some Notes:</p>
+<ul>
+<li>
+<p>Note that this is a project called Git for Windows, which is separate from Git itself; for more information on it, go to <a href="https://gitforwindows.org/">https://gitforwindows.org</a>.</p>
+</li>
+<li>
+<p>To get an automated installation you can use the <a href="https://chocolatey.org/packages/git">Git Chocolatey package</a>. Note that the Chocolatey package is community maintained.</p>
+</li>
+<li>
+<p>Another easy way to get Git installed is by installing GitHub Desktop. The installer includes a command line version of Git as well as the GUI. It also works well with PowerShell, and sets up solid credential caching and sane CRLF settings. We’ll learn more about those things a little later, but suffice it to say they’re things you want. You can download this from the <a href="https://desktop.github.com/">GitHub Desktop website</a>.</p>
+</li>
+</ul>
+<h2 id="windows-installation-tips">Windows Installation Tips</h2>
+<p>On windows you want to configure your setup slightly different from other OS's due to the usage of <strong>Windows Credential Manager, System and User Environment Variable Paths, and SSH/GPG integrations.</strong></p>
+<p>Some tips to follow include:</p>
+<ul>
+<li>During installation do not select the option for using Windows Credential Manager as this brings annoyances later on which verifying credentials associated with any remote repository hosting platforms such as GitHub or BitBucket.</li>
+</ul>
+<p><img alt="ScreenClip" src="../../img/win-credential-manager.png" /></p>
+<blockquote>
+<p>Note I have not tried the <strong>NEW</strong> Cross-Platform version of the Git Credential Manager yet.</p>
+</blockquote>
+<h3 id="installation-screenshots">Installation ScreenShots</h3>
+<p>Here is a collage of each step and the settings I select when downloading/updating Git for Windows:</p>
+<p><img alt="" src="../../img/git-installation-collage.png" /></p>
+<h3 id="installing-from-source">Installing from Source</h3>
+<p>Some people may instead find it useful to install Git from source, because you’ll get the most recent version. The binary installers tend to be a bit behind, though as Git has matured in recent years, this has made less of a difference.</p>
+<p>If you do want to install Git from source, you need to have the following libraries that Git depends on: autotools, curl, zlib, openssl, expat, and libiconv. For example, if you’re on a system that has <code>dnf</code> (such as Fedora) or <code>apt-get</code> (such as a Debian-based system), you can use one of these commands to install the minimal dependencies for compiling and installing the Git binaries:</p>
+<pre><code class="console">$ sudo dnf install dh-autoreconf curl-devel expat-devel gettext-devel \
+  openssl-devel perl-devel zlib-devel
+$ sudo apt-get install dh-autoreconf libcurl4-gnutls-dev libexpat1-dev \
+  gettext libz-dev libssl-dev
+</code></pre>
+
+<p>In order to be able to add the documentation in various formats (doc, html, info), these additional dependencies are required:</p>
+<pre><code class="console">$ sudo dnf install asciidoc xmlto docbook2X
+$ sudo apt-get install asciidoc xmlto docbook2x
+</code></pre>
+
+<h2 id="git-dependencies">Git Dependencies</h2>
+<p>From the Git for Windows INSTALL guide:</p>
+<pre><code>Git is reasonably self-sufficient, but does depend on a few external
+   programs and libraries.  Git can be used without most of them by adding
+   the appropriate &quot;NO_&lt;LIBRARY&gt;=YesPlease&quot; to the make command line or
+   config.mak file.
+
+    - &quot;zlib&quot;, the compression library. Git won't build without it.
+
+    - &quot;ssh&quot; is used to push and pull over the net.
+
+    - A POSIX-compliant shell is required to run some scripts needed
+      for everyday use (e.g. &quot;bisect&quot;, &quot;request-pull&quot;).
+
+    - &quot;Perl&quot; version 5.8 or later is needed to use some of the
+      features (e.g. preparing a partial commit using &quot;git add -i/-p&quot;,
+      interacting with svn repositories with &quot;git svn&quot;).  If you can
+      live without these, use NO_PERL.  Note that recent releases of
+      Redhat/Fedora are reported to ship Perl binary package with some
+      core modules stripped away (see http://lwn.net/Articles/477234/),
+      so you might need to install additional packages other than Perl
+      itself, e.g. Digest::MD5, File::Spec, File::Temp, Net::Domain,
+      Net::SMTP, and Time::HiRes.
+
+    - git-imap-send needs the OpenSSL library to talk IMAP over SSL if
+      you are using libcurl older than 7.34.0.  Otherwise you can use
+      NO_OPENSSL without losing git-imap-send.
+
+      By default, git uses OpenSSL for SHA1 but it will use its own
+      library (inspired by Mozilla's) with either NO_OPENSSL or
+      BLK_SHA1.  Also included is a version optimized for PowerPC
+      (PPC_SHA1).
+
+    - &quot;libcurl&quot; library is used by git-http-fetch, git-fetch, and, if
+      the curl version &gt;= 7.34.0, for git-imap-send.  You might also
+      want the &quot;curl&quot; executable for debugging purposes. If you do not
+      use http:// or https:// repositories, and do not want to put
+      patches into an IMAP mailbox, you do not have to have them
+      (use NO_CURL).
+
+    - &quot;expat&quot; library; git-http-push uses it for remote lock
+      management over DAV.  Similar to &quot;curl&quot; above, this is optional
+      (with NO_EXPAT).
+
+    - &quot;wish&quot;, the Tcl/Tk windowing shell is used in gitk to show the
+      history graphically, and in git-gui.  If you don't want gitk or
+      git-gui, you can use NO_TCLTK.
+
+    - A gettext library is used by default for localizing Git. The
+      primary target is GNU libintl, but the Solaris gettext
+      implementation also works.
+
+      We need a gettext.h on the system for C code, gettext.sh (or
+      Solaris gettext(1)) for shell scripts, and libintl-perl for Perl
+      programs.
+
+      Set NO_GETTEXT to disable localization support and make Git only
+      use English. Under autoconf the configure script will do this
+      automatically if it can't find libintl on the system.
+
+    - Python version 2.4 or later (but not 3.x, which is not
+      supported by Perforce) is needed to use the git-p4 interface
+      to Perforce.
+</code></pre>
+
+<h2 id="installing-a-gui">Installing a GUI</h2>
+<p>Visit https://git-scm.com/download/gui/windows for a listing of options here.</p>
+<p>I also have a listing under <a href="../../resources/">resources</a>.</p></div>
             </div>
         </div>
 
