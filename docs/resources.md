@@ -15,6 +15,29 @@
 * [Article: Better Documentation through Committ Messages](https://corgibytes.com/blog/2019/03/20/commit-messages/)
 * [Article: How to write Git Committ Messages](https://chris.beams.io/posts/git-commit/)
 
+## Graphical User Interface's - GUI
+
+* [Git GUI]()
+* [Visual Studio Code]()
+* [Sourcetree]()
+* [GitHub Desktop]()
+* [GitKraken]() **this is what I use**
+* [RStudio]()
+* [SmartGit]()
+* [GitUp]()
+* [Fork]()
+* [git-cola]()
+* [Git-Ahead]()
+* [TortoiseGit]()
+* [Tower]()
+* [Sublime Merge]()
+* [Gitg]()
+* [Aurees]()
+* [GitAtomic]()
+
+and many others!
+
+
 ## Glossary
 
 - **repository** — A repository is a collection of commits, each of which is an archive of what the project’s working tree looked like at a past date, whether on your machine or someone else’s. It also defines HEAD (see below), which identifies the branch or commit the current working tree stemmed from. Lastly, it contains a set of branches and tags, to identify certain commits by name.
@@ -38,11 +61,8 @@ called “**master**”. Although this is a typical default, it is in no way spe
     
     + If you checkout a specific commit, HEAD refers to that commit only. This is referred to as a detached HEAD, and occurs, for example, if you check out a tag name.
 
+
 ## Commands
 
-- `mkdocs new [dir-name]` - Create a new project.
-- `mkdocs serve` - Start the live-reloading docs server.
-- `mkdocs build` - Build the documentation site.
-- `mkdocs -h` - Print help message and exit.
 
 ## Concepts 
