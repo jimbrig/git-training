@@ -1,7 +1,11 @@
-# git-training
+# Git Training Materials
+
 Various resources and workflows related to teaching others about Git and Version Control
 
-## Local Workflow:
+## Notes: 
+
+### Local Workflow:
+
 - git init: put Git in this folder so that it keeps track of changes to files in this folder and subfolders 
 - Working Directory: the directory you’re writing code in 
 - Staging Area: files are in the staging area if the changes in them will be included in the next save point 
@@ -13,7 +17,8 @@ Various resources and workflows related to teaching others about Git and Version
 - git diff: show what is different from the last commit line by line
 - git diff 234nod: show what is different between the commit 234nod and current state, line by line
 
-## Remote Repository
+### Remote Repository
+
 - git remote add origin address-of-remote: make address-of-remote a new place to put my code and call it “origin”
 - git push -u origin master: push my code to the location origin points to, on the master branch, and also in the future I will pull code from this same location
 - Upstream: where I will pull code from in the future
@@ -25,7 +30,7 @@ Various resources and workflows related to teaching others about Git and Version
 - Pull Request: I made some changes that I would like you to include in your repository, please accept them
 - git clone: give me the code at this location
 
-## Branching
+### Branching
 
 - git branch: what are all my branches? or what are all the names of the different versions of my code?
 - git branch feature: make a new branch/version of my code with the name feature
@@ -34,8 +39,7 @@ Various resources and workflows related to teaching others about Git and Version
 - git merge: combine the history of two branches so I can have the changes from both in one place
 - Merge Conflict: Git does not know how to combine two histories and needs human assistance
 
-
-## More Advanced Concepts 
+### More Advanced Concepts 
 
 > Would not teach these early on in the process.
 
